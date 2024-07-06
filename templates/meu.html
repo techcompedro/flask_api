@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .bnt_fora{
+            margin-top: 20pt;
+            text-align: right;
+        }
+    </style>
+            
+</head>
+<body>
+
+   
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">youth</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">home</a></li>
+        <li><a href="#">contatos</a></li>
+        <li><a href="#">sobre</a></li>       
+    </ul>
+    </div>
+  </nav>
+    
+  <table clase="highlight">
+    <thead>
+      <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>tags</th>
+          
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Alvin</td>
+        <td>salvin@gmail.com</td>
+        <td>12345678</td>
+        <td>oi</td>
+        <td><a class="waves-effect waves-light btn modal-trigger red"><i>apagar</i></a></td>
+        <td><a class="waves-effect waves-light btn modal-trigger red"><i>editar</i></a></td>
+      
+      </tr>
+      <tr>
+        <td>Alan</td>
+        <td>Jellybean@gmail.com</td>
+        <td>12345678</td>
+        <td>oi</td>
+        <td><a class="waves-effect waves-light btn modal-trigger red"><i>apagar</i></a></td>
+        <td><a class="waves-effect waves-light btn modal-trigger red"><i>editar</i></a></td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+</div>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+    <h4>Adicionar um contato</h4>
+    <form>
+        <div class="row">
+        <div class="input-field col s12">
+            <input id="name" type="text" class="validate">
+            <label for="name">Nome</label>
+        </div>
+        <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+        </div>
+        <div class="input-field col s12">
+            <input id="phone" type="text" class="validate">
+            <label for="phone">Celular</label>
+        </div>
+        <div class="input-field col s12">
+            <input id="tags" type="text" class="validate">
+            <label for="tags">#Tags</label>
+        </div>
+        </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn">Adicionar Contato</a>
+    <a href="#!" class="modal-close waves-effect waves-red btn-flat">Limpar Campos</a>
+    </div>
+</div> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems);
+});
+</script>
+</body>
+</html>

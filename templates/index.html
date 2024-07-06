@@ -1,11 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Youth Flask</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <style>
+    .btn-add-contact {
+      margin-top: 20px;
+      text-align: right;
+    }
+  </style>
 </head>
 <body>
-    
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Youth Flask</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#contatos">Contatos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="btn-add-contact">
+      <a class="btn modal-trigger" href="#modal1">Adicionar novo contato</a>
+    </div>
+
+    <table class="highlight">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Celular</th>
+          <th>#Tags</th>
+          <th>...</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fulano</td>
+          <td>fulano@email.com</td>
+          <td>85-99422-0001</td>
+          <td>
+            <div class="chip">Família</div>
+            <div class="chip">Amigos</div>
+          </td>
+          <td>
+            <a class="btn red">Deletar</a>
+            <a class="btn blue">Editar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+        <h4>Adicionar um contato</h4>
+        <form>
+            <div class="row">
+            <div class="input-field col s12">
+                <input id="name" type="text" class="validate">
+                <label for="name">Nome</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="phone" type="text" class="validate">
+                <label for="phone">Celular</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="tags" type="text" class="validate">
+                <label for="tags">#Tags</label>
+            </div>
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn">Adicionar Contato</a>
+        <a href="#!" class="modal-close waves-effect waves-red btn-flat">Limpar Campos</a>
+        </div>
+    </div> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
+    });
+  </script>
 </body>
 </html>
