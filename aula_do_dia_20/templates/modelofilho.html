@@ -1,0 +1,28 @@
+{% extends 'modelopai.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %} teste {% endblock %}
+</head>
+<body>
+    {% block header %}
+        {{ super () }} - Customized!
+    {% endblock %}
+
+    {% block content %}
+       {{ super() }} <p>this is the custom content for my page </p>
+    {% endblock %}
+
+   
+    <p>{{ input ('username') }}</p>
+    <p>{{ input ('password') }}</p>
+
+
+    {% block fase %}
+        {{ super () }} <p>.</p>
+    {% endblock %}
+</body>
+</html>

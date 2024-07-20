@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+</head>
+<body>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   
+    <header>
+        <h1>{% block header %} Welcome {% endblock %}</h1>
+    </header>
+    <main>
+        
+       {% block content %} 
+       <p>html do pai</p>
+       {% endblock %}
+
+        {% macro input(name, value='', type= 'text', size=20) %}
+        <input type="{{type}}" name="{{name}}" value="{{value}}" size="{{size}}">
+        {% endmacro %}
+
+        {% filter upper %}
+            este é um texto de teste 
+        {% endfilter %}
+    </main>
+    <footer>
+        {% block footer %} © 2024 My Webpage {% endblock %}
+    </footer>
+
+
+    {% block fase %}
+    <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p>oi meu nome pedro </p>
+            </div>
+            <div class="card-action">
+              <a href="https://github.com/techcompedro">esse é´o link do meu github</a  target=”_blank”>
+            </div>
+          </div>
+        </div>
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+ <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

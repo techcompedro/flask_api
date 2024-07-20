@@ -1,0 +1,18 @@
+{% extends "base_card.html" %}
+
+    {% block title %}My Custom Card{% endblock %}
+
+    {% block card_title %}{{all_cards[1].title}}{% endblock %}
+
+    {% block card_content %}
+        <img src="{{all_cards[1].links[1].imagem}}" alt="a">
+        {{all_cards[1].content}}
+    {% endblock %}
+
+    {% block card_links %}
+        {% for link in all_cards[1].links %}
+            <a href="{{link.href}}">{{link.text}}</a>
+        {% endfor %}
+    {% endblock %}
+
+

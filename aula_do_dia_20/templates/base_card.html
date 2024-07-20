@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <title>{% block title %}Card Page{% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-image">
+                    <img src="">
+                <span class="card-title">{% block card_title %}Default Title{% endblock %}</span>
+                {% block card_content %}Default Content{% endblock %}
+            </div>
+            <div class="card-action">
+                {% block card_links %}Default Links{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
