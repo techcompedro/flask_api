@@ -32,11 +32,11 @@ user = [
 ]
 
 carro = [
-    {'nome': 'hilux', 'marca': 'toyota', 'cor': 'prata'},
-    {'nome': 'mustang', 'marca': 'ford', 'cor': 'vermelho'},
-    {'nome': 'civic', 'marca': 'honda', 'cor': 'azul'},
-    {'nome': 'corolla', 'marca': 'toyota', 'cor': 'preto'},
-    {'nome': 'camaro', 'marca': 'chevrolet', 'cor': 'amarelo'}
+    {'nome': 'hilux', 'marca': 'toyota', 'cor': 'red'},
+    {'nome': 'mustang', 'marca': 'ford', 'cor': 'blue'},
+    {'nome': 'civic', 'marca': 'honda', 'cor': 'black'},
+    {'nome': 'corolla', 'marca': 'toyota', 'cor': 'yellow'},
+    {'nome': 'camaro', 'marca': 'chevrolet', 'cor': 'green'}
 ]
 
 @app.route('/')
@@ -63,7 +63,29 @@ def index02():
         carro = carro
         )
 
+@app.route('/index03.html')
+def index03():
+    usuarios_ordenados = sorted(user, key=lambda x: int(x['idade']), reverse=True)
+    return render_template('index03.html',
+        titulo = 'minha pagina',
+        teste = False,
+        links = links,
+        user = user,
+        media = 26,
+        usuarios_ordenados = usuarios_ordenados,
+        carro = carro 
+        )
 
+@app.route('/index04.html')
+def index04():
+    return render_template('index04.html',
+        titulo = 'minha pagina',
+        teste = False,
+        links = links,
+        user = user,
+        media = 26,
+        carro = carro 
+        )
 
      
 #   <h1>oi {{nome}}</h1>

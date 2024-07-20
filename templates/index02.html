@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+      td {
+      text-align: center;
+    }
+
+    </script>
 </head>
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     
    
-      <div class="card-content">
+      <div class="centered">
       <div class="card">
         <table>
           <thead>
@@ -21,13 +27,16 @@
             </tr>
           </thead>
           <tbody>
+            {%if carro != none%}
             {% for car in carro %}
             <tr>
               <td>{{car.nome}}</td>
               <td>{{car.marca}}</td>
-              <td>{{car.cor}}</td>
+              <td style="background-color: {{car.cor}}; width: 20px; height: 20px;"></td>
             </tr>
             {% endfor %}
+            {% endif %}
+
           </tbody>
         </table>
       </div>
