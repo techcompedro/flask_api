@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import jinja2
+
 
 app = Flask(__name__)
 
@@ -31,17 +31,53 @@ user = [
     {'nome': 'bruna', 'idade': '18'}
 ]
 
+carro = [
+    {'nome': 'hilux', 'marca': 'toyota', 'cor': 'prata'},
+    {'nome': 'mustang', 'marca': 'ford', 'cor': 'vermelho'},
+    {'nome': 'civic', 'marca': 'honda', 'cor': 'azul'},
+    {'nome': 'corolla', 'marca': 'toyota', 'cor': 'preto'},
+    {'nome': 'camaro', 'marca': 'chevrolet', 'cor': 'amarelo'}
+]
+
 @app.route('/')
 def index():
+    usuarios_ordenados = sorted(user, key=lambda x: int(x['idade']), reverse=True)
     return render_template('index.html',
         titulo = 'minha pagina',
         teste = False,
         links = links,
         user = user,
-        media = 26
+        media = 26,
+        usuarios_ordenados = usuarios_ordenados,
+        carro = carro 
+        )
+
+@app.route('/index02.html')
+def index02():
+    return render_template('index02.html',
+        titulo = 'my pagina',
+        teste = False,
+        links = links,
+        user = user,
+        media = 26,
+        carro = carro
         )
 
 
+
+     
+#   <h1>oi {{nome}}</h1>
+
+#    {% if teste %}
+#    <h1>entrei na condicional</h1>
+
+#    {% else %}
+#    <h1>não entrei na condicional</h1>
+#    {% endif %}
+
+#    {% for row in links %}
+#       <a href="{{row.url}}" target="_blank" >{{row.nome}}</a>
+#    {% endfor %}
 
 
 
